@@ -13,7 +13,7 @@ import { dishes } from './data.js';
     const userDishes = dishes.filter(dish => dish.dietary === userInput);
     const starter = userDishes.filter(dish => dish.dish === 'Starter');
     const main = userDishes.filter(dish => dish.dish === 'Main');
-    const dessert = userDishes.filter(dish => dish.dish === 'Dessert');
+    const dessert = dishes.filter(dish => dish.dish === 'Dessert');
 
     // Random Selection
     const randomStarter = starter[Math.floor(Math.random() * starter.length)];
@@ -23,8 +23,7 @@ import { dishes } from './data.js';
 
     // Output
     console.log(`Order No: ${orderNo}`);
-    console.log(`Deitary Preference: ${userInput}`);
+    console.log(`Dietary Preference: ${userInput}`);
     console.log(`Starter: ${randomStarter.name} (${randomStarter.cuisine})`);
     console.log(`Main: ${randomMain.name} (${randomMain.cuisine})`);
-    console.log(`Dessert:'${randomDessert.name} (${randomDessert.cuisine})`);
-    
+    console.log(`Dessert: ${randomDessert.name} (${randomDessert.cuisine})`);
