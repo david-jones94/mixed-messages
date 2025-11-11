@@ -20,13 +20,13 @@ const mains = filterArr(userDishes, 'dish', 'Main');
 const desserts = filterArr(dishes, 'dish', 'Dessert');
 const veDesserts = filterArr(userDishes, 'dish', 'Dessert');
 
-// Random Selection
+// Random Dish Selection
 const starter = randomiser(starters);
 const main = randomiser(mains);
 const dessert = randomiser(desserts);
 const veDessert = randomiser(veDesserts);
 
-
+// Function to select Vegan/non-Vegan dessert
 const randDesserts = () => {
           
     if (userInput === 'Vegan') {
