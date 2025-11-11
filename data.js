@@ -1,6 +1,6 @@
 export const dishes = [    
         { id: 1, name: 'Shrimp Cocktail', dish: 'Starter', cuisine: 'Brtish', dietary: 'Pescetarian' },
-        { id: 2,name: 'Chicken Wings', dish: 'Starter', cuisine: 'Korean', dietary: 'No Preference' },
+        { id: 2, name: 'Chicken Wings', dish: 'Starter', cuisine: 'Korean', dietary: 'No Preference' },
         { id: 3, name: 'Smoked Salmon', dish: 'Starter', cuisine: 'French', dietary: 'Pescetarian' },
         { id: 4, name: 'Caprese Salad', dish: 'Starter', cuisine: 'Italian', dietary: 'Vegetarian' },
         { id: 5, name: 'Bruscetta', dish: 'Starter', cuisine: 'Italian', dietary: 'Vegetarian' },
@@ -25,3 +25,5 @@ export const dishes = [
         { id: 24, name: 'Cheesecake', dish: 'Dessert', cuisine: 'American', dietary: 'Vegetarian' },
         { id: 25, name: 'Sorbet', dish: 'Dessert', cuisine: 'Various', dietary: 'Vegan' }
     ];
+
+const orderNo = 1
