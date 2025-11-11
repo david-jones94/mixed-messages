@@ -11,7 +11,11 @@ const orderNo = Math.floor(Math.random() * 999);
 // User Dietary Preference
 
 const diets = [...new Set(dishes.map(dish => dish.dietary))];
-let userInput = prompt("Please enter your dietary preference");
+let userInput = prompt("Please enter your dietary preference: ");
+while (!diets.includes(userInput)) {
+    console.log("Invalid input. Please enter one of the following dietary preferences: " + diets.join(", "));
+    userInput = prompt("Please enter your dietary preference: ");
+}
 
 // New Filtering: Reduce dishes based on dietary preference
 const groups = dishes.reduce((acc, dish) => {
