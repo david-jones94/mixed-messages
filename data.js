@@ -18,5 +18,10 @@ export const dishes = [
         { id: 17, name: 'Tofu Stir Fry', dish: 'Main', cuisine: 'Thai', dietary: 'Vegan' },
         { id: 18, name: 'Fish and Chips', dish: 'Main', cuisine: 'British', dietary: 'Pescetarian' },
         { id: 19, name: 'Veggie Burger', dish: 'Main', cuisine: 'American', dietary: 'Vegetarian' },
-        { id: 20, name: 'Falafel Wrap', dish: 'Main', cuisine: 'Middle Eastern', dietary: 'Vegan' }
+        { id: 20, name: 'Falafel Wrap', dish: 'Main', cuisine: 'Middle Eastern', dietary: 'Vegan' },
+        { id: 21, name: 'Sticky Toffee Pudding', dish: 'Dessert', cuisine: 'British', dietary: 'Vegetarian' },
+        { id: 22, name: 'Chocolate Mousse', dish: 'Dessert', cuisine: 'French', dietary: 'Vegetarian' },
+        { id: 23, name: 'Fruit Salad', dish: 'Dessert', cuisine: 'Various', dietary: 'Vegan' },
+        { id: 24, name: 'Cheesecake', dish: 'Dessert', cuisine: 'American', dietary: 'Vegetarian' },
+        { id: 25, name: 'Sorbet', dish: 'Dessert', cuisine: 'Various', dietary: 'Vegan' }
     ];
