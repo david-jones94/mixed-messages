@@ -12,13 +12,35 @@ const orderNo = Math.floor(Math.random() * 999);
 const diets = [...new Set(dishes.map(dish => dish.dietary))];
 const userInput = randomiser(diets);
 
+// New Filtering: Reduce dishes based on dietary preference
+const groupedByDish = dishes.reduce((acc, dish) => {
+    if (!acc[dish.dish]) acc[dish.dish] = [];
+    acc[dish.dish].push(dish);
+    return acc;
+}, {});
+
+const groupedByDiet = dishes.reduce((acc, dish) => {
+    if (!acc[dish.dietary]) acc[dish.dietary] = [];
+    acc[dish.dietary].push(dish);
+    return acc;
+}, {});
+
+const grouped = dishes.reduce((acc, dish) => {
+    if (!acc[dish.dietary]) acc[dish.dietary] = {};
+    if (!acc[dish.dietary][dish.dish]) acc[dish.dietary][dish.dish] = [];
+    acc[dish.dietary][dish.dish].push(dish);
+    return acc;
+}, {})
 
 // Filter Dishes Based on Dietary Preference
-const userDishes = filterArr(dishes, 'dietary', userInput);
-const starters = filterArr(userDishes, 'dish', 'Starter');
-const mains = filterArr(userDishes, 'dish', 'Main');
-const desserts = filterArr(dishes, 'dish', 'Dessert');
-const veDesserts = filterArr(userDishes, 'dish', 'Dessert');
+const userDishes = groupedByDiet[userInput] || [];
+
+// Group Filtered Dishes by Course
+
+const starters = grouped[userInput]['Starter'];
+const mains = grouped[userInput]['Main'];
+const desserts = grouped[userInput]['Dessert'];
+const veDesserts = grouped['Vegan']['Dessert'];
 
 // Random Dish Selection
 const starter = randomiser(starters);
