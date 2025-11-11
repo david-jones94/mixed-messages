@@ -19,11 +19,12 @@ const cuisines = ['Italian', 'Middle Eastern', 'Indian', 'Thai', 'Mediterranean'
 
 
 
-
+// Random Meal Generator Function
 const randomiser = () => {
 
     const sDiet = dietaryPreferences[Math.floor(Math.random() * dietaryPreferences.length)];
     
+    // Function to select protein based on dietary preference
     const sProtein =() => {
         if (sDiet === 'No Preference') {
             return meat[Math.floor(Math.random() * meat.length)]      
@@ -33,6 +34,7 @@ const randomiser = () => {
             return vegetarian[Math.floor(Math.random() * vegetarian.length)]
         } else {
             return vegan[Math.floor(Math.random() * vegan.length)]}};
+
 
     const sCarb = carbs[Math.floor(Math.random() * carbs.length)];
     const sVegetable1 = vegetables1[Math.floor(Math.random() * vegetables1.length)];
@@ -46,6 +48,7 @@ const randomiser = () => {
 
     console.log(`Chosen Dietary Preference: ${sDiet}`);  
     
+    // Final Meal Output
     if (sCuisine === 'Italian') {
         console.log(`For your dish, you must prepare an ${sCuisine} inspired ${sProtein()} ${sDishType}, ${sVegDishType} ${sVegetable1} and ${sVegetable2}, garnished with ${sGarnish} and a side of ${sCarb}. ${sSignOff}`)
     } else {
@@ -54,9 +57,5 @@ const randomiser = () => {
 
 }
 
-
+// Invoke Meal
 randomiser();
-
-
-
-
