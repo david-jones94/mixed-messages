@@ -1,0 +1,22 @@
+export const dishes = [    
+        { id: 1, name: 'Shrimp Cocktail', dish: 'Starter', cuisine: 'Brtish', dietary: 'Pescetarian' },
+        { id: 2,name: 'Chicken Wings', dish: 'Starter', cuisine: 'Korean', dietary: 'No Preference' },
+        { id: 3, name: 'Smoked Salmon', dish: 'Starter', cuisine: 'French', dietary: 'Pescetarian' },
+        { id: 4, name: 'Caprese Salad', dish: 'Starter', cuisine: 'Italian', dietary: 'Vegetarian' },
+        { id: 5, name: 'Bruscetta', dish: 'Starter', cuisine: 'Italian', dietary: 'Vegetarian' },
+        { id: 6, name: 'Stuffed Mushrooms', dish: 'Starter', cuisine: 'British', dietary: 'Vegetarian' },
+        { id: 7, name: 'Hummus Platter', dish: 'Starter', cuisine: 'Middle Eastern', dietary: 'Vegan' },
+        { id: 8, name: 'Guacamole with Chips', dish: 'Starter', cuisine: 'Mexican', dietary: 'Vegan' },
+        { id: 9, name: 'Roasted Red Pepper Soup', dish: 'Starter', cuisine: 'Mediterranean', dietary: 'Vegan' },
+        { id: 10, name: 'Grilled Chicken Salad', dish: 'Main', cuisine: 'American', dietary: 'No Preference' },
+        { id: 11, name: 'Beef Stir Fry', dish: 'Main', cuisine: 'Chinese', dietary: 'No Preference' },
+        { id: 12, name: 'Vegetable Curry', dish: 'Main', cuisine: 'Indian', dietary: 'Vegan' },
+        { id: 13, name: 'Quinoa Salad', dish: 'Main', cuisine: 'Middle Eastern', dietary: 'Vegetarian' },
+        { id: 14, name: 'Lentil Soup', dish: 'Main', cuisine: 'Brtish', dietary: 'Vegan' },      
+        { id: 15, name: 'Seared Tuna', dish: 'Main', cuisine: 'Japanese', dietary: 'Pescetarian' },
+        { id: 16, name: 'Pasta Primavera', dish: 'Main', cuisine: 'Italian', dietary: 'Vegetarian' },
+        { id: 17, name: 'Tofu Stir Fry', dish: 'Main', cuisine: 'Thai', dietary: 'Vegan' },
+        { id: 18, name: 'Fish and Chips', dish: 'Main', cuisine: 'British', dietary: 'Pescetarian' },
+        { id: 19, name: 'Veggie Burger', dish: 'Main', cuisine: 'American', dietary: 'Vegetarian' },
+        { id: 20, name: 'Falafel Wrap', dish: 'Main', cuisine: 'Middle Eastern', dietary: 'Vegan' }
+    ];
