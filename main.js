@@ -1,13 +1,10 @@
 
-// Importing Dish Data
+// Importing Dish Data and Utilities
 import { dishes } from './data.js';
+import { filterArr, randomiser } from './utils.js';
 
 
-// Helper Functions
-const filterArr = (arr, key, value) => {return arr.filter(obj => obj[key] === value);}
-const randomiser = (arr) => {return arr[Math.floor(Math.random() * arr.length)];}
-
-
+// Generate Random Order Number
 const orderNo = Math.floor(Math.random() * 999);
     
 // User Dietary Preference
