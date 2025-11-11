@@ -13,19 +13,8 @@ const diets = [...new Set(dishes.map(dish => dish.dietary))];
 const userInput = randomiser(diets);
 
 // New Filtering: Reduce dishes based on dietary preference
-const groupedByDish = dishes.reduce((acc, dish) => {
-    if (!acc[dish.dish]) acc[dish.dish] = [];
-    acc[dish.dish].push(dish);
-    return acc;
-}, {});
 
-const groupedByDiet = dishes.reduce((acc, dish) => {
-    if (!acc[dish.dietary]) acc[dish.dietary] = [];
-    acc[dish.dietary].push(dish);
-    return acc;
-}, {});
-
-const grouped = dishes.reduce((acc, dish) => {
+const groups = dishes.reduce((acc, dish) => {
     if (!acc[dish.dietary]) acc[dish.dietary] = {};
     if (!acc[dish.dietary][dish.dish]) acc[dish.dietary][dish.dish] = [];
     acc[dish.dietary][dish.dish].push(dish);
@@ -33,14 +22,14 @@ const grouped = dishes.reduce((acc, dish) => {
 }, {})
 
 // Filter Dishes Based on Dietary Preference
-const userDishes = groupedByDiet[userInput] || [];
+const userDishes = groups[userInput];
 
 // Group Filtered Dishes by Course
 
-const starters = grouped[userInput]['Starter'];
-const mains = grouped[userInput]['Main'];
-const desserts = grouped[userInput]['Dessert'];
-const veDesserts = grouped['Vegan']['Dessert'];
+const starters = groups[userInput]['Starter'];
+const mains = groups[userInput]['Main'];
+const desserts = groups[userInput]?.Dessert ? groups[userInput]['Dessert'] : groups['Vegan']['Dessert'];
+const veDesserts = groups['Vegan']?.Dessert || [];
 
 // Random Dish Selection
 const starter = randomiser(starters);
@@ -64,4 +53,5 @@ console.log(`Order No: ${orderNo}`);
 console.log(`Dietary Preference: ${userInput}`);
 console.log(`Starter: ${starter.name} (${starter.cuisine})`);
 console.log(`Main: ${main.name} (${main.cuisine})`);
-console.log(`Dessert: ${randDesserts().name} (${randDesserts().cuisine})`);
+console.log(`Dessert: ${dessert.name} (${dessert.cuisine})`);
+
