@@ -19,9 +19,6 @@ const groups = dishes.reduce((acc, dish) => {
     return acc;
 }, {})
 
-// Filter Dishes Based on Dietary Preference
-const userDishes = groups[userInput];
-
 // Group Filtered Dishes by Course
 const starters = groups[userInput]['Starter'];
 const mains = groups[userInput]['Main'];
