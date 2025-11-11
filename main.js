@@ -2,6 +2,8 @@
 // Importing Dish Data and Utilities
 import { dishes } from './data.js';
 import { filterArr, randomiser } from './utils.js';
+import promptSync from './node_modules/prompt-sync/index.js';
+const prompt = promptSync();
 
 // Generate Random Order Number
 const orderNo = Math.floor(Math.random() * 999);
@@ -9,7 +11,7 @@ const orderNo = Math.floor(Math.random() * 999);
 // User Dietary Preference
 
 const diets = [...new Set(dishes.map(dish => dish.dietary))];
-const userInput = randomiser(diets);
+let userInput = prompt("Please enter your dietary preference");
 
 // New Filtering: Reduce dishes based on dietary preference
 const groups = dishes.reduce((acc, dish) => {
