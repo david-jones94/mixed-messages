@@ -2,60 +2,38 @@
 
 
 // Data Sets for Meal Randomiser Program
+const dishes = [    
+        { name: 'Shrimp Cocktail', dish: 'Starter', cuisine: 'Brtish', dietary: 'Pescetarian' },
+        { name: 'Chicken Wings', dish: 'Starter', cuisine: 'Korean', dietary: 'No Preference' },
+        { name: 'Smoked Salmon', dish: 'Starter', cuisine: 'French', dietary: 'Pescetarian' },
+        { name: 'Caprese Salad', dish: 'Starter', cuisine: 'Italian', dietary: 'Vegetarian' },
+        { name: 'Bruscetta', dish: 'Starter', cuisine: 'Italian', dietary: 'Vegetarian' },
+        { name: 'Stuffed Mushrooms', dish: 'Starter', cuisine: 'British', dietary: 'Vegetarian' },
+        { name: 'Hummus Platter', dish: 'Starter', cuisine: 'Middle Eastern', dietary: 'Vegan' },
+        { name: 'Guacamole with Chips', dish: 'Starter', cuisine: 'Mexican', dietary: 'Vegan' },
+        { name: 'Roasted Red Pepper Soup', dish: 'Starter', cuisine: 'Mediterranean', dietary: 'Vegan' },
+        { name: 'Grilled Chicken Salad', dish: 'Main', cuisine: 'American', dietary: 'No Preference' },
+        { name: 'Beef Stir Fry', dish: 'Main', cuisine: 'Chinese', dietary: 'No Preference' },
+        { name: 'Vegetable Curry', dish: 'Main', cuisine: 'Indian', dietary: 'Vegan' },
+        { name: 'Quinoa Salad', dish: 'Main', cuisine: 'Middle Eastern', dietary: 'Vegetarian' },
+        { name: 'Lentil Soup', dish: 'Main', cuisine: 'Brtish', dietary: 'Vegan' },      
+        { name: 'Seared Tuna', dish: 'Main', cuisine: 'Japanese', dietary: 'Pescetarian' },
+        { name: 'Pasta Primavera', dish: 'Main', cuisine: 'Italian', dietary: 'Vegetarian' },
+        { name: 'Tofu Stir Fry', dish: 'Main', cuisine: 'Thai', dietary: 'Vegan' }
+    ];
 
-const dietaryPreferences = ['Vegetarian', 'Vegan', 'Pescetarian', 'No Preference']
-const vegan = ['Tofu', 'Lentil', 'Chickpea', 'Tempeh'];
-const vegetarian = [...vegan, 'Egg', 'Paneer', 'Greek Yogurt'];
-const pescetarian = [...vegetarian, 'Salmon', 'Tuna', 'Shrimp'];
-const meat = [...pescetarian, 'Chicken', 'Beef', 'Turkey', 'Lamb'];
-const carbs = ['Rice', 'Quinoa', 'Couscous', 'Barley'];
-const vegetables1 = ['Broccoli', 'Spinach', 'Carrots', 'Zucchini', 'Asparagus'];
-const vegetables2 = ['Bell Peppers', 'Mushrooms', 'Cauliflower', 'Green Beans', 'Brussels Sprouts'];
-const dishTypes = ['Curry', 'Stew', 'Pasta', 'Salad', 'Soup']
-const vegDishTypes = ['Blanched', 'Roasted', 'Steamed', 'Sautéed']
-const garnish = ['Pea Puree', 'Toasted Almonds', 'Lemon and Thyme', 'Truffle Oil','Fresh Herbs'];
-const signOffMessages = ['Bon Appétit!', 'Enjoy your meal!', 'Happy Cooking!', 'Savor the flavors!'];
-const cuisines = ['Italian', 'Middle Eastern', 'Indian', 'Thai', 'Mediterranean', 'Mexican'];
-
-
-
-// Random Meal Generator Function
-const randomiser = () => {
-
-    const sDiet = dietaryPreferences[Math.floor(Math.random() * dietaryPreferences.length)];
+    const orderNo = Math.floor(Math.random() * 999)
     
-    // Function to select protein based on dietary preference
-    const sProtein =() => {
-        if (sDiet === 'No Preference') {
-            return meat[Math.floor(Math.random() * meat.length)]      
-        } else if (sDiet === 'Pescetarian') {
-            return pescetarian[Math.floor(Math.random() * pescetarian.length)]
-        } else if (sDiet === 'Vegetarian') {
-            return vegetarian[Math.floor(Math.random() * vegetarian.length)]
-        } else {
-            return vegan[Math.floor(Math.random() * vegan.length)]}};
+    let userInput = 'Vegan';
+    const userDishes = dishes.filter(dish => dish.dietary === userInput)
+    const starter = userDishes.filter(dish => dish.dish === 'Starter')
+    const main = userDishes.filter(dish => dish.dish === 'Main')
 
+    const randomStarter = starter[Math.floor(Math.random() * starter.length)];
+    const randomMain = main[Math.floor(Math.random() * main.length)];
 
-    const sCarb = carbs[Math.floor(Math.random() * carbs.length)];
-    const sVegetable1 = vegetables1[Math.floor(Math.random() * vegetables1.length)];
-    const sVegetable2 = vegetables2[Math.floor(Math.random() * vegetables2.length)];
-    const sDishType = dishTypes[Math.floor(Math.random() * dishTypes.length)];
-    const sGarnish = garnish[Math.floor(Math.random() * garnish.length)];
-    const sVegDishType = vegDishTypes[Math.floor(Math.random() * vegDishTypes.length)];
-    const sSignOff = signOffMessages[Math.floor(Math.random() * signOffMessages.length)];
-    const sCuisine = cuisines[Math.floor(Math.random() * cuisines.length)];
+    console.log(`Order No: ${orderNo}`);
+    console.log(`Deitary Preference: ${userInput}`);
+    console.log(`Starter: ${randomStarter.name} (${randomStarter.cuisine})`);
+    console.log(`Main: ${randomMain.name} (${randomMain.cuisine})`);
     
-
-    console.log(`Chosen Dietary Preference: ${sDiet}`);  
-    
-    // Final Meal Output
-    if (sCuisine === 'Italian') {
-        console.log(`For your dish, you must prepare an ${sCuisine} inspired ${sProtein()} ${sDishType}, ${sVegDishType} ${sVegetable1} and ${sVegetable2}, garnished with ${sGarnish} and a side of ${sCarb}. ${sSignOff}`)
-    } else {
-        console.log(`For your dish, you must prepare a ${sCuisine} inspired ${sProtein()} ${sDishType}, ${sVegDishType} ${sVegetable1} and ${sVegetable2}, garnished with ${sGarnish} and a side of ${sCarb}. ${sSignOff}`);
-    }
-
-}
-
-// Invoke Meal
-randomiser();
